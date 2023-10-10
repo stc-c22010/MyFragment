@@ -25,7 +25,6 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentThanksContainer"
-        android:name="jp.suntech.c22010.myfragment.MenuThanksFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"

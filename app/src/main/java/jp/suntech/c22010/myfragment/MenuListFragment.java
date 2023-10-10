@@ -144,10 +144,19 @@ public class MenuListFragment extends Fragment {
 
             transaction.setReorderingAllowed(true);
 
-            transaction.addToBackStack("Only List");
+            Activity parentActivity = getActivity();
 
-            transaction.replace(R.id.fragmentMainContainer, MenuThanksFragment.class, bundle);
+            View fragmentMainContainer = parentActivity.findViewById(R.id.fragmentMainContainer);
 
+            View fragmentThanksContainer = parentActivity.findViewById(R.id.fragmentThanksContainer);
+
+            if(fragmentMainContainer != null){
+                transaction.addToBackStack("Only List");
+                transaction.replace(R.id.fragmentMainContainer, MenuThanksFragment.class, bundle);
+            }
+            else if(fragmentThanksContainer != null){
+                transaction.replace(R.id.fragmentThanksContainer, MenuThanksFragment.class, bundle);
+            }
             transaction.commit();
         }
     }
